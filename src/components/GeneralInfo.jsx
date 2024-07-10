@@ -17,8 +17,15 @@ function GeneralInfo({genInfo, setGenInfo}) {
   //   console.log(formData);
   // }
 
+  const [disableMode, setDisableMode] = useState(true);
+
+  function handleDisableMode(e) {
+    setDisableMode(!disableMode)
+  }
+
   return (
     <>
+    <fieldset disabled={disableMode}>
     <label>
       Name: {" "}
       <input
@@ -47,7 +54,9 @@ function GeneralInfo({genInfo, setGenInfo}) {
       />
     </label>
     <br/>
-    <button>Submit</button>
+    </fieldset>
+    <button disabled={disableMode} onClick={handleDisableMode}>Save</button>
+    <button disabled={!disableMode} onClick={handleDisableMode}>Edit</button>
     </>
   ); 
 }
