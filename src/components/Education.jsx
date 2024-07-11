@@ -33,12 +33,28 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
               onChange={(event) => setEduExps(index, event)}
             >
               <option value="">Select Level</option>
-              <option value="hs">High School</option>
-              <option value="diploma">Diploma</option>
-              <option value="bachelor">Bachelor</option>
-              <option value="master">Master</option>
-              <option value="doctorate">Doctorate</option>
+              <option value="High School">High School</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Bachelor">Bachelor</option>
+              <option value="Master">Master</option>
+              <option value="Doctorate">Doctorate</option>
             </select>
+          </label>
+          <label>
+            Start Date: 
+            <input type="date"
+            name="fromDate"
+            value={eduItem.fromDate}
+            onChange={(event) => setEduExps(index, event)}
+            />
+          </label>
+          <label>
+            Graduation Date: 
+            <input type="date"
+            name="toDate"
+            value={eduItem.toDate}
+            onChange={(event) => setEduExps(index, event)}
+            />
           </label>
         </div>
       ))}
