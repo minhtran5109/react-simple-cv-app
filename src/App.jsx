@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import CVforms from './components/CVforms.jsx'
+import CVForms from './components/CVForms.jsx'
+import CVPreview from './components/CVPreview.jsx';
+
+const eduForm = {
+  name: '',
+  degreeTitle: '',
+  degreeLevel: '',
+  fromDate: '',
+  toDate: '',
+}
 
 function App() {
   const [genInfo, setGenInfo] = useState({
@@ -8,22 +17,37 @@ function App() {
     email: 'ejohn@email.com',
     phoneNumber: '0000 000 000',
   });
+  const [eduExps, setEduExps] = useState([eduForm]);
 
   function handleInputChange(e) {
     const {name, value} = e.target;
     setGenInfo({...genInfo, [name]: value});
   };
 
+  function handleListInputChange(setter, index, event) {
+    const {name, value} = event.target;
+    setter(prevForms => {
+      const newForms = prevForms.map((form, formIndex) => {
+        if (index !== formIndex) return form;
+        return { ...form, [name]: value };
+      });
+      return newForms;
+    });
+  } 
+
+  function handleAddForm(setter, newForm) {
+    setter(prevForms => [...prevForms, newForm])
+  };
+
   return (
     <div className='container'>
-      <CVforms genInfo={genInfo} setGenInfo={handleInputChange}/>
-      <div className='preview'>
-        preview
-        <br />
-        N: {genInfo.name}<br />
-        E: {genInfo.email}<br />
-        Tel: {genInfo.phoneNumber}<br />
-      </div>
+      <CVForms 
+      genInfo={genInfo} setGenInfo={handleInputChange} 
+      eduExps={eduExps} 
+      setEduExps={(index, event) => handleListInputChange(setEduExps, index, event)}
+      onAddFormEdu={() => handleAddForm(setEduExps, eduForm)}
+      />
+      <CVPreview genInfo={genInfo} eduExps={eduExps}/>
     </div>
   )
 }
