@@ -37,7 +37,8 @@ function CVPreview({genInfo, eduExps, pracExps}) {
             {pracItem.fromDate ?
             formatMonth(pracItem.fromDate) : ""}
             {" - "}
-            {pracItem.toDate ? formatMonth(pracItem.toDate) : ""}
+            {pracItem.toDate && pracItem.toDate !== "Present" ? formatMonth(pracItem.toDate) : 
+            pracItem.toDate}
           </div>
         ))}
       </div>

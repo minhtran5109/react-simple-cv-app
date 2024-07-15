@@ -10,7 +10,7 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
 
   return (
     <div>
-      <fieldset>
+      <fieldset disabled={disableMode}>
         <legend>Educational Experience</legend>
         {eduExps.map((eduItem, index) => (
           <div key={index}>

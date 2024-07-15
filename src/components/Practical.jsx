@@ -3,14 +3,21 @@ import { useState } from "react";
 function Practical({pracExps, setPracExps, onAddFormPrac}) {
 
   const [disableMode, setDisableMode] = useState(true);
+  const [workingStatus, setWorkingStatus] = useState(false);
 
-  function handleDisableMode(e) {
+  function handleDisableMode() {
     setDisableMode(!disableMode)
   }
 
+  function handleWorkingStatus() {
+    setWorkingStatus(!workingStatus);
+  }
+
+  console.log(workingStatus);
+  console.log(pracExps[0])
   return (
     <div>
-      <fieldset>
+      <fieldset disabled={disableMode}>
         <legend>Practical Experience</legend>
         {pracExps.map((pracItem, index) => (
           <div key={index}>
@@ -57,9 +64,19 @@ function Practical({pracExps, setPracExps, onAddFormPrac}) {
               To: 
               <input type="month"
               name="toDate"
+              disabled={workingStatus}
               value={pracItem.toDate}
               onChange={(event) => setPracExps(index, event)}
               />
+              <input type="checkbox"
+              name="toDate"
+              value="Present"
+              onClick={(event) => {
+                handleWorkingStatus();
+                setPracExps(index, event)
+              }}
+              />
+              Currently in this position
             </label>
           </div>
         ))}
