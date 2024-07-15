@@ -1,4 +1,8 @@
+import formatMonth from "../utils"
+
 function CVPreview({genInfo, eduExps}) {
+  // console.log(formatMonth(eduExps[0].fromDate));
+
   return (
     <div className='preview'>
       preview
@@ -16,7 +20,10 @@ function CVPreview({genInfo, eduExps}) {
           <div key={index}>
             School: {eduItem.name}<br />
             Degree: {eduItem.degreeTitle} ({eduItem.degreeLevel})<br />
-            {eduItem.fromDate} - {eduItem.toDate}
+            {eduItem.fromDate ?
+            formatMonth(eduItem.fromDate) : ""}
+            {" - "}
+            {eduItem.toDate ? formatMonth(eduItem.toDate) : ""}
           </div>
         ))}
       </div>
@@ -24,4 +31,4 @@ function CVPreview({genInfo, eduExps}) {
   )
 }
 
-export default CVPreview
+export default CVPreview;

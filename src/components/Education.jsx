@@ -48,16 +48,16 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
               </select>
             </label>
             <label>
-              Start Date: 
-              <input type="date"
+              Start: 
+              <input type="month"
               name="fromDate"
               value={eduItem.fromDate}
               onChange={(event) => setEduExps(index, event)}
               />
             </label>
             <label>
-              Graduation Date: 
-              <input type="date"
+              Graduation: 
+              <input type="month"
               name="toDate"
               value={eduItem.toDate}
               onChange={(event) => setEduExps(index, event)}
