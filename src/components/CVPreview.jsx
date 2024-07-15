@@ -1,7 +1,6 @@
 import formatMonth from "../utils"
 
-function CVPreview({genInfo, eduExps}) {
-  // console.log(formatMonth(eduExps[0].fromDate));
+function CVPreview({genInfo, eduExps, pracExps}) {
 
   return (
     <div className='preview'>
@@ -27,6 +26,22 @@ function CVPreview({genInfo, eduExps}) {
           </div>
         ))}
       </div>
+
+      <div>
+        <h3>Practical Experience</h3>
+        {pracExps.map((pracItem, index) => (
+          <div key={index}>
+            Company: {pracItem.companyName}<br />
+            Position: {pracItem.position}<br />
+            Responsibilities: <br />{pracItem.responsibilities}<br />
+            {pracItem.fromDate ?
+            formatMonth(pracItem.fromDate) : ""}
+            {" - "}
+            {pracItem.toDate ? formatMonth(pracItem.toDate) : ""}
+          </div>
+        ))}
+      </div>
+
     </div>
   )
 }

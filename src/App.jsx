@@ -11,6 +11,14 @@ const eduForm = {
   toDate: '',
 }
 
+const pracForm = {
+  companyName: '',
+  position: '',
+  responsibilities: '',
+  fromDate: '',
+  toDate: '',
+}
+
 function App() {
   const [genInfo, setGenInfo] = useState({
     name: 'Example John',
@@ -18,6 +26,7 @@ function App() {
     phoneNumber: '0000 000 000',
   });
   const [eduExps, setEduExps] = useState([eduForm]);
+  const [pracExps, setPracExps] = useState([pracForm]);
 
   function handleInputChange(e) {
     const {name, value} = e.target;
@@ -46,8 +55,11 @@ function App() {
       eduExps={eduExps} 
       setEduExps={(index, event) => handleListInputChange(setEduExps, index, event)}
       onAddFormEdu={() => handleAddForm(setEduExps, eduForm)}
+      pracExps={pracExps} 
+      setPracExps={(index, event) => handleListInputChange(setPracExps, index, event)}
+      onAddFormPrac={() => handleAddForm(setPracExps, pracForm)}
       />
-      <CVPreview genInfo={genInfo} eduExps={eduExps}/>
+      <CVPreview genInfo={genInfo} eduExps={eduExps} pracExps={pracExps}/>
     </div>
   )
 }

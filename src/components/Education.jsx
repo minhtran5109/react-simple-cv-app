@@ -28,7 +28,7 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
               <input
                 type="text"
                 name="degreeTitle"
-                value={eduItem.price}
+                value={eduItem.degreeTitle}
                 onChange={(event) => setEduExps(index, event)}
               />
             </label>
