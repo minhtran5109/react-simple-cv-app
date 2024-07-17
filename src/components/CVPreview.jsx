@@ -1,4 +1,5 @@
 import formatMonth from "../utils"
+import "../styles/CVPreview.css"
 
 function CVPreview({genInfo, eduExps, pracExps}) {
 

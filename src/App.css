@@ -10,14 +10,3 @@ body {
 .container {
   display: flex;
 }
-
-.cv {
-  flex: 50%;
-  height: 100vh;
-}
-
-.preview {
-  flex: 50%;
-  height: 100vh;
-  background-color: lightgray;
-}

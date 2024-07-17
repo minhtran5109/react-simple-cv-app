@@ -9,32 +9,37 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
   }
 
   return (
-    <div>
+    <div className='cv-section'>
       <fieldset disabled={disableMode}>
         <legend>Educational Experience</legend>
         {eduExps.map((eduItem, index) => (
           <div key={index}>
-            <label>
-              School Name:
+            <div className="form-row">
+              <label htmlFor="name">School Name</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 value={eduItem.name}
                 onChange={(event) => setEduExps(index, event)}
               />
-            </label>
-            <label>
-              Degree Title:
+            </div>
+
+            <div className="form-row">
+              <label htmlFor="degreeTitle">Degree Title</label>
               <input
+                id="degreeTitle"
                 type="text"
                 name="degreeTitle"
                 value={eduItem.degreeTitle}
                 onChange={(event) => setEduExps(index, event)}
               />
-            </label>
-            <label>
-              Degree Level:
+            </div>
+
+            <div className="form-row">
+              <label htmlFor="degreeLevel">Degree Level</label>
               <select
+                id="degreeLevel"
                 name="degreeLevel"
                 value={eduItem.degreeLevel}
                 onChange={(event) => setEduExps(index, event)}
@@ -46,23 +51,29 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
                 <option value="Master">Master</option>
                 <option value="Doctorate">Doctorate</option>
               </select>
-            </label>
-            <label>
-              Start: 
-              <input type="month"
-              name="fromDate"
-              value={eduItem.fromDate}
-              onChange={(event) => setEduExps(index, event)}
+            </div>
+
+            <div className="form-row">
+              <label htmlFor="fromDate">Start</label>
+              <input
+                id="fromDate"
+                type="month"
+                name="fromDate"
+                value={eduItem.fromDate}
+                onChange={(event) => setEduExps(index, event)}
               />
-            </label>
-            <label>
-              Graduation: 
-              <input type="month"
-              name="toDate"
-              value={eduItem.toDate}
-              onChange={(event) => setEduExps(index, event)}
-              />
-            </label>
+            </div>
+
+            <div className="form-row">
+              <label htmlFor="toDate">Graduation</label>
+              <input
+                id="toDate"
+                type="month"
+                name="toDate"
+                value={eduItem.toDate}
+                onChange={(event) => setEduExps(index, event)}
+                />
+            </div>
           </div>
         ))}
         <button type="button" onClick={onAddFormEdu}>

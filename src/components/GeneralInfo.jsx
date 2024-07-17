@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/CVForms.css'
 
 function GeneralInfo({genInfo, setGenInfo}) {
 
@@ -9,39 +10,44 @@ function GeneralInfo({genInfo, setGenInfo}) {
   }
 
   return (
-    <div>
-    <fieldset disabled={disableMode}>
-      <legend>General Information</legend>
-      <label>
-        Name: {" "}
-        <input
-          type="text"
-          name="name"
-          value={genInfo.name}
-          onChange={setGenInfo}
-        />
-      </label>
-      <label>
-        Email: {" "}
-        <input
-          type="email"
-          name="email"
-          value={genInfo.email}
-          onChange={setGenInfo}
-        />
-      </label>
-      <label>
-        Telephone: {" "}
-        <input
-          type="tel"
-          name="phoneNumber"
-          value={genInfo.phoneNumber}
-          onChange={setGenInfo}
-        />
-      </label>
-    </fieldset>
-      <button disabled={disableMode} onClick={handleDisableMode}>Save</button>
-      <button disabled={!disableMode} onClick={handleDisableMode}>Edit</button>
+    <div className='cv-section'>
+      <fieldset disabled={disableMode}>
+        <legend>General Information</legend>
+        <div className="form-row">
+          <label htmlFor='name'>Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            value={genInfo.name}
+            onChange={setGenInfo}
+          />
+        </div>
+
+        <div className="form-row">
+          <label htmlFor='email'>Email</label>
+          <input
+            id='email'
+            type="email"
+            name="email"
+            value={genInfo.email}
+            onChange={setGenInfo}
+          />
+        </div>
+        
+        <div className="form-row">
+          <label htmlFor='phoneNumber'>Telephone</label>
+          <input
+            id='phoneNumber'
+            type="tel"
+            name="phoneNumber"
+            value={genInfo.phoneNumber}
+            onChange={setGenInfo}
+          />
+        </div>
+      </fieldset>
+        <button disabled={disableMode} onClick={handleDisableMode}>Save</button>
+        <button disabled={!disableMode} onClick={handleDisableMode}>Edit</button>
     </div>
   ); 
 }
