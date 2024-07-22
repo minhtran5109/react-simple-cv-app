@@ -3,3 +3,15 @@
   height: 100vh;
   background-color: lightgray;
 }
+
+.a4 {
+  background-color: white;
+  margin: 10px;
+  width: 600px;
+  height: 846px;
+}
+
+.preview-section {
+  border-bottom: 1px solid black;
+  margin: 7px;
+}
