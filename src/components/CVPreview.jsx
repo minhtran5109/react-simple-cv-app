@@ -6,14 +6,18 @@ function CVPreview({genInfo, eduExps, pracExps}) {
   return (
     <div className='preview'>
       <div className="a4">
-        <div className="preview-section">
-          <h3>General Info</h3>
-          N: {genInfo.name}<br />
-          E: {genInfo.email}<br />
-          Tel: {genInfo.phoneNumber}<br />
+        <div className="preview-header">
+          <div className="namebox">
+            <h1>{genInfo.name}</h1>
+          </div>
+          <div className="personal-details">
+            E: {genInfo.email}<br />
+            Tel: {genInfo.phoneNumber}<br />
+          </div>
         </div>
         <div className="preview-section">
-          <h3>Education</h3>
+          <h2>Education</h2>
+          <hr/>
           {eduExps.map((eduItem, index) => (
             <div key={index}>
               School: {eduItem.name}<br />
@@ -26,7 +30,8 @@ function CVPreview({genInfo, eduExps, pracExps}) {
           ))}
         </div>
         <div className="preview-section">
-          <h3>Practical Experience</h3>
+          <h2>Practical Experience</h2>
+          <hr />
           {pracExps.map((pracItem, index) => (
             <div key={index}>
               Company: {pracItem.companyName}<br />
