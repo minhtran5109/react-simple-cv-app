@@ -46,8 +46,8 @@ function GeneralInfo({genInfo, setGenInfo}) {
           />
         </div>
       </fieldset>
-        <button disabled={disableMode} onClick={handleDisableMode}>Save</button>
-        <button disabled={!disableMode} onClick={handleDisableMode}>Edit</button>
+        <button disabled={disableMode} onClick={handleDisableMode} className='save-btn'>Save</button>
+        <button disabled={!disableMode} onClick={handleDisableMode} className='edit-btn'>Edit</button>
     </div>
   ); 
 }

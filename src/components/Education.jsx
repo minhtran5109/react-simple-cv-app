@@ -74,14 +74,15 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
                 onChange={(event) => setEduExps(index, event)}
                 />
             </div>
+            <hr />
           </div>
         ))}
         <button type="button" onClick={onAddFormEdu}>
           +
         </button>
       </fieldset>
-      <button disabled={disableMode} onClick={handleDisableMode}>Save</button>
-      <button disabled={!disableMode} onClick={handleDisableMode}>Edit</button>
+      <button disabled={disableMode} onClick={handleDisableMode} className="save-btn">Save</button>
+      <button disabled={!disableMode} onClick={handleDisableMode} className="edit-btn">Edit</button>
     </div>
   )
 }
