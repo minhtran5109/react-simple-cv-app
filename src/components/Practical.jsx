@@ -85,12 +85,13 @@ function Practical({pracExps, setPracExps, onAddFormPrac}) {
                   handleWorkingStatus();
                   setPracExps(index, event)
                 }}
-                /> Currently in this position
+                /> 
+                <span>Currently in this position</span>
             </div>
             <hr />
           </div>
         ))}
-        <button type="button" onClick={onAddFormPrac}>
+        <button type="button" className="add-btn" onClick={onAddFormPrac}>
           +
         </button>
       </fieldset>

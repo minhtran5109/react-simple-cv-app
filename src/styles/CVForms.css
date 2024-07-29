@@ -3,15 +3,17 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-}
+  /* justify-content: space-around; */
 
-.cv h1 {
-  margin-left: 12px;
+  overflow: auto;
+  width: 100%;
 }
 
 .cv-section {
+  flex: 1 1 auto;
   margin: 10px;
+  /* overflow: visible; */
+  min-width: 500px;
 }
 
 .cv-section legend {
@@ -32,7 +34,6 @@
   flex-wrap: wrap;
 }
 
-
 .form-row input[type='text'],
 .form-row input[type='email'],
 .form-row input[type='tel'] {
@@ -47,12 +48,59 @@
 .form-row input[type='tel'] {
   width: 200px;
 }
+.form-row input[type='month'] {
+  height: 22px;
+}
+
+.form-row select {
+  padding: 5px;
+}
+
+.form-row input[type='checkbox'] {
+  transform: scale(1.2);
+  margin-top: 8px;
+  margin-left: 12px;
+}
+
+.form-row input[type='checkbox'] + span {
+  margin-top: 6px;
+  margin-left: 3px;
+  font-size: 0.9em;
+}
+
+.form-row textarea {
+  font-size: 14px;
+
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  min-height: 180px;
+  padding: 7px;
+  resize: none;
+}
 
 .form-row label {
   text-align: right;
   width: 120px;
   margin-top: 7px;
   padding-right: 20px;
+}
+
+.add-btn{
+  margin-left: 10px;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 45%;
+  background-color: #31b86e;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .save-btn, .edit-btn {

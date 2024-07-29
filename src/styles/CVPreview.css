@@ -2,12 +2,13 @@
   flex: 50%;
   height: 100vh;
   background-color: lightgray;
+  overflow: scroll;
 }
 
 .a4 {
   background-color: white;
   margin: 10px;
-  width: 600px;
+  width: 80%;
   height: 846px;
   padding: 10px;
 }

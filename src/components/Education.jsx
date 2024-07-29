@@ -77,7 +77,7 @@ function Education({eduExps, setEduExps, onAddFormEdu}) {
             <hr />
           </div>
         ))}
-        <button type="button" onClick={onAddFormEdu}>
+        <button type="button" className="add-btn" onClick={onAddFormEdu}>
           +
         </button>
       </fieldset>
